@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        
 
         // TODO: 1. Assign a dialing intent here. Finished
         // How to use the FloatingActionButton.
