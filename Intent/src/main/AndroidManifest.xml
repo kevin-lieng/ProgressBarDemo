@@ -30,6 +30,7 @@
             android:name=".Third"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme"/>
+        <activity android:name=".SettingScreen" android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

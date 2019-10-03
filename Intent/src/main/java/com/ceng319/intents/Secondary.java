@@ -21,13 +21,10 @@ public class Secondary extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    // TODO: Step 10 Go back to the main activity here. Finihed
-                    finish();
+                    finish(); // finish the current activity.
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_datasection);
-
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_alarms);

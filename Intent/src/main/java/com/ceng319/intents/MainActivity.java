@@ -26,21 +26,24 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 2000;
     private Menu menu;
     private boolean mclicked = false;
+    Toolbar mToolbar;
+    FloatingActionButton mFab;
+    FloatingActionButton mFab1;
+    EditText mediText2;
+    TextView mtextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
        setTheme(R.style.AppTheme_NoActionBar); // Make sure this method is before super.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        findAllViews();
+        setSupportActionBar(mToolbar);
 
-        
 
         // TODO: 1. Assign a dialing intent here. Finished
         // How to use the FloatingActionButton.
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Do you want to call someone?", Snackbar.LENGTH_LONG)
@@ -54,8 +57,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // TODO: 2. Add another FAB and assign the email intent. Finished
-        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-        fab1.setOnClickListener(new View.OnClickListener() {
+        mFab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Do you want to send message?", Snackbar.LENGTH_LONG)
@@ -67,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
                         }).show();
             }
         });
+    }
+
+    private void findAllViews() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mFab = (FloatingActionButton) findViewById(R.id.fab);
+        mediText2 = (EditText) findViewById(R.id.editText2);
+        mtextView = (TextView) findViewById(R.id.returnedDate);
+        mFab1 = (FloatingActionButton) findViewById(R.id.fab1);
     }
 
     /**
@@ -103,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(callIntent);
         }catch (SecurityException error)
         {
-            Log.e("Drac", "Call Failed");
+            Log.e("MapleLeaf", "Call Failed");
         }
 
     }
@@ -113,14 +123,14 @@ public class MainActivity extends AppCompatActivity {
     private void email(){
         // TODO: 5. Finish this method - Finished
         try{
-            String message = "This is the message I want to send";
+            String message = String.valueOf(mediText2.getText());
             Intent sendIntent = new Intent(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT, message);
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
         }catch (SecurityException error)
         {
-            Log.e("Drac", "Call Failed");
+            Log.e("MapleLeaf", "Call Failed");
         }
 
     }
@@ -141,13 +151,14 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         // TODO: 6. Finish all the options for the menu selections. Finished
         if (id == R.id.action_settings) {
+            Intent intent0 = new Intent(this, SettingScreen.class);
+            startActivity(intent0);
             return true;
         }
         else if (id == R.id.action_secondary)
         {
             Intent intent1 = new Intent(this, Secondary.class);
-            EditText mEdit = findViewById(R.id.editText2);
-            intent1.putExtra("EXTRA_MESSAGE", String.valueOf(mEdit.getText()));
+            intent1.putExtra("EXTRA_MESSAGE", String.valueOf(mediText2.getText()));
             startActivity(intent1);
         }
         else if (id == R.id.action_third)
@@ -199,8 +210,7 @@ public class MainActivity extends AppCompatActivity {
                 str = str+ "/" + data.getExtras().getString("Year");
 
 
-                TextView textView = findViewById(R.id.returnedDate);
-                textView.setText(str);
+                mtextView.setText(str);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
