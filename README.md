@@ -62,7 +62,7 @@ Other methods that may be used with the progress bar include:
 
 **ProgressBar.setMin(int value)**
 
-    This method is introduced in SDK 23 in which you are able to set the lower limit of the progress bar to a certain integer value.
+    This method is introduced in SDK 26 in which you are able to set the lower limit of the progress bar to a certain integer value.
 
 **ProgressBar.setMax(int value)** 
 
@@ -88,3 +88,60 @@ Some of the major attributes are:
     Code usage: ProgressBar.setMinHeight(300); 
     This would set the minimum width of the Progress Bar to an integer value of DP (Density-Independent Pixels).
 
+**ProgressTintList (ProgressBar.setProgressTintList(ColorTintList))**
+
+    The changing of the attributes here, allows for the changing of the color of the bar within the progress bar. This color can be changed multiple times if need be.  
+
+    Code usage: 
+    ProgressBar.setProgressTintList(ColorTintList.valueOf(getColor(R.color.colorString)));
+
+    This would change the color of the bar to the color within the string inside the colors.XML
+
+## **Sample Functions Using Methods**
+---------------------------------------------------------------
+**checkProgress()**
+    
+    void checkProgress() {
+        mProgressValue.setText(progress + "%");
+        if(progress < 50)
+        {
+            mProgressBar.setProgressTintList(ColorStateList.valueOf(getColor(R.color.progressLow)));
+        }
+        else if(progress > 50 && progress < mProgressBar.getMax()) {
+            mProgressBar.setProgressTintList(ColorStateList.valueOf(getColor(R.color.progressMid)));
+        }
+        else if (progress == mProgressBar.getMax()){
+            mProgressBar.setProgressTintList(ColorStateList.valueOf(getColor(R.color.progressMax)));
+        }
+    }
+
+    /* This function checks the progress of the progress bar and changes the color of the progress bar at certain intervals */
+
+**setAdd5ButtonEvent()**
+
+    void setAdd5ButtonEvent() {
+        if(progress < mProgressBar.getMax()) {
+            progress = progress + 5;
+            mProgressBar.setProgress(progress, animate);
+            // mProgressBar.incrementProgressBy(5);
+        }
+        else {
+            Toast.makeText(this, getText(R.string.maxWarning), Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    /* This event would be implemented could be implemented to increment the progress bar by 5. If the progress bar is already full, it would send out a toast message. 
+    Please Note: That the incrementProgressBy(5) can replace the first two lines after the if statement. */ 
+
+## **Demo App With ProgressBar**
+----------------------------------------------------------------------------
+A full demo is made available when the code within this repository is cloned or downloaded. The demo can run in either emulator or actual android device. 
+
+Please refer to the clone or download button at the top of the page. 
+
+[Click Here To Go To The Top!](#top)
+
+## **References**
+----------------------------------------------------------------------------
+ProgressBar. (n.d.). Retrieved from https://developer.android.com/reference/android/widget/ProgressBar.
