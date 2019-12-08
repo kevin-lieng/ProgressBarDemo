@@ -138,9 +138,9 @@ Some of the major attributes are:
 
 ## **Demo App With ProgressBar**
 ----------------------------------------------------------------------------
-A full demo is made available when the code within this repository is cloned or downloaded. The demo can run in either emulator or actual android device. 
+A full demo is made available, just use the code within this repository by clicking the button below. The demo can run in either emulator or actual android device. 
 
-Please refer to the clone or download button at the top of the page. 
+Please refer to the clone or download button at the top of the page to use the demo. 
 
 [Click Here To Go To The Top!](#top)
 
