@@ -4,11 +4,13 @@
 
 -------------------------------------------------------------------------
 
-The Progress Bar is a widget in a shape of a bar that fills upon the impending completion of an action. The major function of this component is to give a visual representation of an action completing or moving forward. 
+The Progress Bar is a widget in a shape of a bar that fills upon the impending completion of an action. The major function of this component is to give a visual representation of an action completing or moving forward. In this document we will be discussing the different methods and attributes that are available to use for the progress bar from SDK 26 and below. There are two main progress bars that are used inside this component, the horizontal and spinning progress bar. The horizontal progress bar gives a better visual representation of showing progress; whereas, the spinning progress bar gives a representation of loading data. 
+
+The progress bar that will be mostly discussed in this blog will be the usage of the horizontal bar. This progress bar can be seen used during installation of new applications and updates of the Android Operating System. It can also be used in a variety of other ways; however, this blog will explain the basic usages of this component.
 
 ## **History** 
 -------------------------------------------------------------------------
-The Progress Bar component was introduced to the Android Operating System as early as the first version of Android or SDK 1. It could be found in the **android.widget** library. Although an old component or widget, the usefulness of its functionality remains to this date. 
+The Progress Bar component was introduced to the Android Operating System as early as the first version of Android or SDK 1. It could be found in the **android.widget** library. Although an old component or widget, the usefulness of its functionality remains to this date. Although this component is old, it is still be constantly updated as Android improves their operating system. Many other methods are being added with each update.
 
 ## **Major Methods**
 -------------------------
@@ -86,7 +88,7 @@ Some of the major attributes are:
     By editing these values inside the XML file or through the code, one can change the height dimensions of the progress bar. 
 
     Code usage: ProgressBar.setMinHeight(300); 
-    This would set the minimum width of the Progress Bar to an integer value of DP (Density-Independent Pixels).
+    This would set the minimum height of the Progress Bar to an integer value of DP (Density-Independent Pixels).
 
 **ProgressTintList (ProgressBar.setProgressTintList(ColorTintList))**
 
