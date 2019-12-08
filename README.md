@@ -133,7 +133,7 @@ Some of the major attributes are:
         }
     }
 
-    /* This event would be implemented could be implemented to increment the progress bar by 5. If the progress bar is already full, it would send out a toast message. 
+    /* This event could be implemented to increment the progress bar by 5. If the progress bar is already full, it would send out a toast message. 
     Please Note: That the incrementProgressBy(5) can replace the first two lines after the if statement. */ 
 
 ## **Demo App With ProgressBar**
