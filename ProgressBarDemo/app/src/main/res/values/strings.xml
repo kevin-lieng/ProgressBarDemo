@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Progress Bar Demo</string>
+    <string name="sub1btn">Subtract 1</string>
+    <string name="sub5btn">Subtract 5</string>
+    <string name="add1btn">Add 1</string>
+    <string name="add5btn">Add 5</string>
+    <string name="reset_btn">Reset Progress</string>
+    <string name="progressText">Current Progress:</string>
+    <string name="progressValue">0 %</string>
+    <string name="imageDescription">Image changes on progress</string>
+    <string name="minWarning">You cannot go below 0 in progress.</string>
+    <string name="maxWarning">Max progress has already been reached.</string>
+</resources>
