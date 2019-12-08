@@ -28,23 +28,27 @@ It can be used normally without these context and attributes set through the usa
 
 Other methods that may be used with the progress bar include:
 
-    ProgressBar.setProgress(int value)
+**ProgressBar.setProgress(int value)**
         
     This method when used sets the progress bar to a certain value and displays that value onto the progress bar in terms of fullness. 
 
-    ProgressBar.setProgress(int value, boolean toAnimate)
+**ProgressBar.setProgress(int value, boolean toAnimate)**
     
-    This method was introduced in SDK 24 for the usage of showing an animated progress as it decreases or increases. Without this animation, the bar fills up staticly; however, with the animation as the bar changes the movement of the bar appears to be more fluid. 
+    This method was introduced in SDK 24 for the usage of showing an animated progress as it decreases or increases. 
+    Without this animation, the bar fills up staticly; however, with the animation as the bar changes the 
+    movement of the bar appears to be more fluid. 
 
     toAnimate is a boolean that can be set to true or false. 
 
 **ProgressBar.getProgress()**
 
-    This method retrieves the current progress value and returns that value as an integer. This value can be saved in a variable and displayed as text if needed. 
+    This method retrieves the current progress value and returns that value as an integer. This value can be saved 
+    in a variable and displayed as text if needed. 
 
 **ProgressBar.incrementProgressBy(int value)**
     
-    This method increments / increases the Progress Bar by the value that is given to it. Not to be confused with setProgress(int value), this method increases the bar by a value rather than setting the bar to a value. 
+    This method increments / increases the Progress Bar by the value that is given to it. Not to be confused 
+    with setProgress(int value), this method increases the bar by a value rather than setting the bar to a value. 
 
     Currently there is no decrement method that is similar to incrementProgressBy(int value).
 
